@@ -1,10 +1,10 @@
 package smarthome.agent;
-
 import jade.core.Agent;
+import utils.Prop;
 
 public class ReasonerAgent extends Agent{
 		protected void setup(){
-			String filepath = "/home/wakako-nakano/eclipse-workspace/smarthome/src/agent/Reasoner.clp";
+			String filepath = Prop.getProperty("url");
 		    addBehaviour(new ReasonerBehaviour(this,filepath)); 
 		}
 	}

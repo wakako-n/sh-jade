@@ -14,6 +14,7 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import smarthome.ontology.*;
 import smarthome.ontology.Action;
+import utils.Prop;
 import jade.content.*;
 import jade.content.abs.*;
 import jade.content.onto.*;
@@ -23,7 +24,7 @@ import jade.lang.acl.*;
 public class ReasonerBehaviour extends CyclicBehaviour {
 	Rete jess;
 	Agent myAgent;
-	String actuator = "actuator";
+	String actuator = Prop.getProperty("ac_a");
 	private MessageTemplate template = MessageTemplate.and(
 			MessageTemplate.MatchPerformative(ACLMessage.INFORM),
 			MessageTemplate.MatchOntology(SensorOntology.NAME));
