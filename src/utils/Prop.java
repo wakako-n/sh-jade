@@ -6,13 +6,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class Prop {
     public Prop(){
         super();
     }
     
     private static final Map mp;
-    private static Prop theApp = new Prop();
+    //private static Prop theApp = new Prop();
     private static String path = "/utils/config.properties";
     private static final Properties prop;
    /* public Map load(String path) throws IOException {

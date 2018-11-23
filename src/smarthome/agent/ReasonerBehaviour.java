@@ -110,6 +110,4 @@ public class ReasonerBehaviour extends CyclicBehaviour {
 			re.printStackTrace(System.err);
 		}
 	}
-
-
 }

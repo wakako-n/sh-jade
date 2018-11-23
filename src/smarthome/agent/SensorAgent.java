@@ -2,16 +2,6 @@ package smarthome.agent;
 
 import jade.core.*;
 import jade.core.behaviours.*;
-import jade.domain.FIPAException;
-import jade.domain.FIPANames;
-import jade.proto.SimpleAchieveREInitiator;
-import jade.content.lang.Codec;
-import jade.content.lang.sl.*;
-import jade.domain.*;
-import jade.content.*;
-import jade.content.abs.*;
-import jade.content.onto.*;
-import jade.content.onto.basic.*;
 import smarthome.ontology.*;
 import utils.Prop;
 import jade.lang.acl.*;
@@ -71,11 +61,10 @@ public class SensorAgent extends Agent {
 
 		// Register the ontology used by this application
 		//getContentManager().registerOntology(SensorOntology.getInstance());
-		String reanm= "sensorstate1";
+		String reanm= Prop.getProperty("rn_a");
 		iid = new AID(reanm, AID.ISLOCALNAME);
 		// Create and add the main behaviour of this agent
 		addBehaviour(new HandleSensorBehaviour(this));
 	}
-
 
 }
