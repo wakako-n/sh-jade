@@ -1,1 +1,1 @@
-# sh-jade
+# smarthome

@@ -1,4 +1,5 @@
 package utils;
+
 import utils.Prop;
 import jade.core.Profile;
 import jade.core.ProfileImpl;
