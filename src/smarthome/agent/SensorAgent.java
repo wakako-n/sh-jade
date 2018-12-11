@@ -2,19 +2,10 @@ package smarthome.agent;
 
 import jade.core.*;
 import jade.core.behaviours.*;
-import jade.domain.FIPAException;
-import jade.domain.FIPANames;
-import jade.proto.SimpleAchieveREInitiator;
-import jade.content.lang.Codec;
-import jade.content.lang.sl.*;
-import jade.domain.*;
-import jade.content.*;
-import jade.content.abs.*;
-import jade.content.onto.*;
-import jade.content.onto.basic.*;
 import smarthome.ontology.*;
 import utils.Prop;
 import jade.lang.acl.*;
+import eu.hansolo.galileo.*;
 
 public class SensorAgent extends Agent {
 
@@ -25,12 +16,16 @@ public class SensorAgent extends Agent {
 	// AGENT BEHAVIOURS
 	class HandleSensorBehaviour extends TickerBehaviour {		
 		public HandleSensorBehaviour(Agent myAgent){
-			super(myAgent,1000);   // how often to take a value from sensor
+			super(myAgent,5000);   // how often to take a value from sensor
 		}
 
 		public void onTick(){
 			try{
-				// getting the value from sensor around here, now assign the specified value
+				GalileoIO galileoIO = new GalileoIO();
+                                double  value = galileoIO.getAnalog(Analog.A0);
+                                sensorvalue = (int) value;
+ 
+                                // getting the value from sensor around here, now assign the specified value
 				// TODO -- change --- get value from sensor
 				// TODO -- change --- add number of sensor
 				// set values 
@@ -71,11 +66,10 @@ public class SensorAgent extends Agent {
 
 		// Register the ontology used by this application
 		//getContentManager().registerOntology(SensorOntology.getInstance());
-		String reanm= "sensorstate1";
+		String reanm= Prop.getProperty("rn_a");
 		iid = new AID(reanm, AID.ISLOCALNAME);
 		// Create and add the main behaviour of this agent
 		addBehaviour(new HandleSensorBehaviour(this));
 	}
-
 
 }

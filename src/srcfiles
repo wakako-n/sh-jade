@@ -1,0 +1,10 @@
+smarthome/agent/ActuatorAgent.java
+smarthome/agent/ReasonerAgent.java
+smarthome/agent/SensorAgent.java
+smarthome/agent/ReasonerBehaviour.java
+smarthome/ontology/Action.java
+smarthome/ontology/Reasoner.java
+smarthome/ontology/Sensor.java
+smarthome/ontology/SensorOntology.java
+utils/Prop.java
+utils/Start.java

@@ -54,6 +54,7 @@ public class ReasonerBehaviour extends CyclicBehaviour {
 		String command= null, name = null, type = null;
 		int value = -100;
 
+
 		if (rmsg != null) {
 			Sensor s = null;
 			// getting the sensor status from receive message
@@ -76,10 +77,12 @@ public class ReasonerBehaviour extends CyclicBehaviour {
 				fact = jess.listFacts(); 
 				// getting the result fact about action command
 				while(fact.hasNext()){
+
 					Fact fac2 = (Fact)fact.next();
 					if( fac2.getName().equals("MAIN::Action")){ 
 						command = fac2.getSlotValue( "command" ).toString();
-						System.out.println( "command: " +  command);
+
+						System.out.println( "command: "+ command);
 						// sending the result command to actuator agent
 						try {
 							Action a = new Action();
@@ -110,6 +113,4 @@ public class ReasonerBehaviour extends CyclicBehaviour {
 			re.printStackTrace(System.err);
 		}
 	}
-
-
 }

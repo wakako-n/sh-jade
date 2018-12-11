@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class Prop {
     public Prop(){
         super();
